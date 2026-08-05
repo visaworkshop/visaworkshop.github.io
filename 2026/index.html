@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VISA 2026 — Virtual ISA for the Agentic Era · MICRO 2026, Athens</title>
+<meta name="description" content="VISA 2026, the 1st Workshop on Virtual ISA for Rapidly Evolving Architectures — a virtual ISA built for the agentic era, where LLM code agents meet rapidly evolving silicon. Saturday afternoon, October 31, 2026 (13:00–17:00 EET), co-located with MICRO 2026 in Athens, Greece."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='5' width='20' height='6' rx='1' fill='%230D5EAF'/%3E%3Crect x='3' y='13' width='26' height='6' rx='1' fill='%23122439'/%3E%3Crect x='6' y='21' width='20' height='6' rx='1' fill='%23B26B33'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   VISA 2026 — design tokens
+   Palette: Athenian marble + Aegean blue (software) + interconnect copper
+   (silicon). Type: Newsreader display / Source Sans 3 body / IBM Plex Mono
+   for the ISA vernacular (dates, times, section mnemonics).
+   NOTE: this stylesheet is intentionally duplicated in cfp.html so each
+   year's directory stays fully self-contained as an archive. If you edit
+   shared styles, edit both files.
+   ========================================================================== */
+:root{
+  --marble:#F6F7F5;
+  --paper:#FFFFFF;
+  --ink:#122439;
+  --mist:#54677C;
+  --aegean:#0D5EAF;
+  --aegean-deep:#0A4A8B;
+  --aegean-tint:#E9F1FB;
+  --aegean-tint-2:#DCE9F8;
+  --copper:#B26B33;
+  --copper-deep:#8F5323;
+  --copper-tint:#F8F0E7;
+  --copper-tint-2:#F2E4D3;
+  --line:#D5DDE5;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono","SF Mono",Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--marble);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+a{color:var(--aegean);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--aegean);outline-offset:2px;border-radius:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ---------- header ---------- */
+.site-head{border-bottom:1px solid var(--line);background:var(--marble)}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 24px;flex-wrap:wrap}
+.wordmark{font-family:var(--serif);font-weight:600;font-size:1.35rem;color:var(--ink);letter-spacing:.01em}
+.wordmark small{font-family:var(--mono);font-weight:400;font-size:.8em;color:var(--aegean);margin-left:.35em}
+.site-nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.site-nav a{font-family:var(--mono);font-size:.82rem;color:var(--mist)}
+.site-nav a:hover{color:var(--ink);text-decoration:none}
+.site-nav a.nav-cta{
+  color:#fff;background:var(--aegean);padding:8px 14px;border-radius:4px;
+}
+.site-nav a.nav-cta:hover{background:var(--aegean-deep)}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 0 64px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;color:var(--aegean);margin-bottom:18px}
+.eyebrow .sep{color:var(--line);margin:0 .5em}
+h1.display{
+  font-family:var(--serif);font-weight:600;line-height:1.02;
+  font-size:clamp(3rem,7vw,4.6rem);letter-spacing:-.01em;
+}
+h1.display .yr{color:var(--aegean)}
+.hero-sub{
+  font-family:var(--serif);font-weight:400;font-style:italic;
+  font-size:clamp(1.2rem,2.4vw,1.5rem);color:var(--mist);
+  margin:14px 0 12px;max-width:34ch;line-height:1.4;
+}
+.hero-sub b{color:var(--ink);font-weight:500;font-style:italic}
+.hero-name{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;
+  color:var(--mist);margin-bottom:26px;
+}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.fact{
+  font-family:var(--mono);font-size:.8rem;color:var(--ink);
+  border:1px solid var(--line);background:var(--paper);
+  padding:7px 12px;border-radius:4px;
+}
+.fact b{color:var(--aegean);font-weight:500}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{
+  display:inline-block;font-family:var(--sans);font-weight:600;font-size:1rem;
+  padding:13px 22px;border-radius:4px;border:1.5px solid transparent;
+}
+.btn:hover{text-decoration:none}
+.btn-solid{background:var(--aegean);color:#fff}
+.btn-solid:hover{background:var(--aegean-deep)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--marble)}
+.cta-note{font-family:var(--mono);font-size:.78rem;color:var(--mist)}
+
+/* ---------- the signature: the agentic loop ---------- */
+.stack{display:flex;flex-direction:column;gap:0;padding:6px 40px 6px 0;position:relative}
+.layer{
+  border:1px solid var(--line);border-radius:4px;background:var(--paper);
+  padding:13px 16px;font-size:.92rem;line-height:1.45;
+}
+.layer .tag{
+  display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;
+  text-transform:uppercase;margin-bottom:2px;
+}
+.layer.agents{background:var(--aegean);border-color:var(--aegean-deep);color:#fff;font-weight:600}
+.layer.agents .tag{color:#CFE3F8}
+.layer.soft2{background:var(--aegean-tint);border-color:var(--aegean-tint-2)}
+.layer.soft2 .tag{color:var(--aegean-deep)}
+.layer.hard{background:var(--copper-tint);border-color:var(--copper-tint-2)}
+.layer.hard .tag{color:var(--copper)}
+.layer.hard2{background:var(--copper-deep);border-color:var(--copper-deep);color:#fff;font-weight:600}
+.layer.hard2 .tag{color:#F0D9BE}
+.layer.visa{
+  background:var(--ink);color:var(--marble);border-color:var(--ink);
+  margin:0 -16px;padding:16px 20px;box-shadow:0 10px 28px rgba(18,36,57,.22);
+  position:relative;
+}
+.layer.visa .tag{color:#8FB8E8}
+.layer.visa b{font-family:var(--serif);font-weight:600;font-size:1.12rem;letter-spacing:.01em}
+.layer.visa small{display:block;color:#B9C6D6;font-size:.82rem;margin-top:2px}
+.hop{
+  font-family:var(--mono);font-size:.72rem;color:var(--mist);
+  padding:5px 0 5px 22px;
+}
+.hop::before{content:"↓ ";color:var(--copper)}
+.feedback{
+  position:absolute;top:10px;bottom:10px;right:8px;width:0;
+  border-right:1.5px dashed var(--mist);opacity:.9;
+}
+.feedback::before{
+  content:"▲";position:absolute;top:-6px;right:-6.5px;
+  color:var(--aegean);font-size:.72rem;line-height:1;
+}
+.feedback span{
+  position:absolute;top:50%;right:5px;
+  writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;
+  color:var(--mist);white-space:nowrap;
+}
+.stack-caption{
+  font-family:var(--mono);font-size:.74rem;color:var(--mist);
+  margin-top:14px;padding-left:2px;
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .stack .layer,.stack .hop{opacity:0;transform:translateY(10px);animation:rise .55s ease forwards}
+  .stack > :nth-child(1){animation-delay:.05s}
+  .stack > :nth-child(2){animation-delay:.13s}
+  .stack > :nth-child(3){animation-delay:.21s}
+  .stack > :nth-child(4){animation-delay:.29s}
+  .stack > :nth-child(5){animation-delay:.37s}
+  .stack > :nth-child(6){animation-delay:.45s}
+  .stack > :nth-child(7){animation-delay:.53s}
+  .stack > :nth-child(8){animation-delay:.61s}
+  .stack > :nth-child(9){animation-delay:.69s}
+  .feedback{opacity:0;animation:fadein .6s .85s ease forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @keyframes fadein{to{opacity:.9}}
+}
+
+/* ---------- news ---------- */
+.news{border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:18px 22px;margin-bottom:8px}
+.news ul{list-style:none}
+.news li{display:flex;gap:16px;padding:6px 0;align-items:baseline}
+.news time{font-family:var(--mono);font-size:.78rem;color:var(--copper);white-space:nowrap}
+.news p{font-size:.95rem}
+
+/* ---------- flagship band: built for the agentic era ---------- */
+.band{background:var(--ink);color:#C7D2DE;margin-top:48px;padding:64px 0}
+.band .sec-label code{color:#D08A4D}
+.band .sec-label .rule{background:#2A3E56}
+.band h2{color:#fff}
+.band .lede{color:#C7D2DE}
+.band a{color:#8FB8E8}
+.agent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.agent-card{border:1px solid #2A3E56;border-radius:4px;padding:18px 18px 16px;background:rgba(255,255,255,.02)}
+.agent-card code{display:block;font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;color:#8FB8E8;margin-bottom:7px}
+.agent-card p{font-size:.88rem;color:#B9C6D6;line-height:1.55}
+.band-cta{margin-top:30px;font-size:.95rem}
+.band-cta .btn-solid{background:var(--aegean)}
+@media (max-width:920px){.agent-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:580px){.agent-grid{grid-template-columns:1fr}}
+
+/* ---------- sections ---------- */
+.sec{padding:64px 0;border-top:1px solid var(--line)}
+.sec-label{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.sec-label code{
+  font-family:var(--mono);font-size:.8rem;color:var(--copper);letter-spacing:.04em;
+}
+.sec-label .rule{flex:1;height:1px;background:var(--line)}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,3.4vw,2.3rem);line-height:1.15;margin-bottom:22px}
+.lede{max-width:68ch}
+.lede p + p{margin-top:1em}
+.two-col{columns:2;column-gap:44px;max-width:none}
+.two-col p{break-inside:avoid-column;margin-bottom:1em}
+
+/* ---------- dates table ---------- */
+table{width:100%;border-collapse:collapse}
+.dates{max-width:640px}
+.dates td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:baseline}
+.dates td:first-child{width:56%}
+.dates .when{font-family:var(--mono);font-size:.88rem;white-space:nowrap}
+.dates tr.due{background:var(--aegean-tint);border-left:3px solid var(--aegean)}
+.dates tr.due td{font-weight:600}
+.dates-note{font-family:var(--mono);font-size:.76rem;color:var(--mist);margin-top:12px}
+
+/* ---------- keynotes ---------- */
+.keynote-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.keynote{border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:26px 26px 22px;border-top:3px solid var(--aegean)}
+.keynote .k-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--aegean);margin-bottom:10px;display:block}
+.keynote h3{font-family:var(--serif);font-weight:600;font-size:1.45rem;line-height:1.2}
+.keynote .aff{font-family:var(--mono);font-size:.8rem;color:var(--mist);margin:4px 0 12px}
+.keynote p{font-size:.95rem}
+.keynote .tba{font-family:var(--mono);font-size:.78rem;color:var(--copper);margin-top:12px}
+
+/* ---------- program ---------- */
+.schedule th{
+  text-align:left;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--mist);font-weight:500;
+  padding:0 14px 10px;border-bottom:2px solid var(--ink);
+}
+.schedule td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:baseline;font-size:.97rem}
+.schedule .t{font-family:var(--mono);font-size:.84rem;white-space:nowrap;color:var(--ink);width:11.5em}
+.schedule tr.row-key{background:var(--aegean-tint)}
+.schedule tr.row-key .what b{color:var(--aegean-deep)}
+.schedule tr.row-panel{background:var(--copper-tint)}
+.schedule tr.row-break td{color:var(--mist);font-style:italic}
+.schedule .what b{font-weight:600}
+.schedule .what small{display:block;color:var(--mist);font-size:.85rem}
+
+/* ---------- people ---------- */
+.people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.person{border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:20px}
+.person h3{font-family:var(--serif);font-weight:600;font-size:1.18rem;line-height:1.25}
+.person .aff{font-family:var(--mono);font-size:.76rem;color:var(--aegean);margin:3px 0 10px}
+.person p{font-size:.88rem;color:var(--mist)}
+.tpc{margin-top:44px}
+.tpc h3{font-family:var(--serif);font-weight:600;font-size:1.35rem;margin-bottom:10px}
+.tpc-names{font-size:1rem;max-width:70ch}
+.tpc-names .dot{color:var(--copper);margin:0 .45em}
+.tpc-note{font-family:var(--mono);font-size:.78rem;color:var(--mist);margin-top:10px}
+
+/* ---------- footer ---------- */
+.site-foot{background:var(--ink);color:#C7D2DE;margin-top:64px}
+.foot-in{display:grid;grid-template-columns:1.2fr .9fr .9fr;gap:36px;padding:56px 24px 40px}
+.site-foot h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#8FB8E8;margin-bottom:12px;font-weight:500}
+.site-foot p,.site-foot li{font-size:.92rem}
+.site-foot ul{list-style:none}
+.site-foot li{margin-bottom:8px}
+.site-foot a{color:#E8EEF5}
+.site-foot .foot-mark{font-family:var(--serif);font-weight:600;font-size:1.3rem;color:#fff;margin-bottom:10px}
+.foot-base{border-top:1px solid #2A3E56;padding:18px 24px;font-family:var(--mono);font-size:.72rem;color:#7A8CA0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---------- responsive ---------- */
+@media (max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .layer.visa{margin:0 -8px}
+  .keynote-grid{grid-template-columns:1fr}
+  .people-grid{grid-template-columns:1fr 1fr}
+  .two-col{columns:1}
+  .foot-in{grid-template-columns:1fr}
+}
+@media (max-width:580px){
+  .people-grid{grid-template-columns:1fr}
+  .hero{padding:52px 0 48px}
+  .sec{padding:48px 0}
+  .schedule .t{width:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-in wrap" style="padding-left:24px;padding-right:24px">
+    <a class="wordmark" href="./">VISA<small>2026</small></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="#about">About</a>
+      <a href="#agents">Agents</a>
+      <a href="#dates">Dates</a>
+      <a href="#keynotes">Keynotes</a>
+      <a href="#program">Program</a>
+      <a href="#people">People</a>
+      <a href="#venue">Venue</a>
+      <a class="nav-cta" href="cfp.html">Call for papers</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero wrap">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">Co-located with MICRO 2026<span class="sep">·</span>Athens, Greece<span class="sep">·</span>Sat, Oct 31</p>
+      <h1 class="display">VISA <span class="yr">2026</span></h1>
+      <p class="hero-sub">Agents are becoming the programmers. Silicon keeps evolving. <b>The virtual ISA is the contract between them.</b></p>
+      <p class="hero-name">1st Workshop on Virtual ISA for Rapidly Evolving Architectures</p>
+      <div class="facts">
+        <span class="fact"><b>Sat, Oct 31, 2026</b></span>
+        <span class="fact"><b>13:00 – 17:00</b> EET · afternoon</span>
+        <span class="fact">Short papers · <b>4–6 pages</b></span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="cfp.html">Read the call for papers</a>
+        <a class="btn btn-ghost" href="#program">See the program</a>
+      </div>
+      <p class="cta-note" style="margin-top:14px">Submission site (HotCRP) opens soon · deadline Sep 11, 2026 (AoE)</p>
+    </div>
+
+    <!-- The signature: the agentic loop — agents write down through the ISA; the ISA reports back up -->
+    <figure class="stack" aria-label="Diagram: LLM code agents synthesize kernels down through a stable virtual ISA to silicon, while cost models, counters, and semantics feed back up to the agents — a closed loop">
+      <div class="layer agents"><span class="tag">Machine programmers</span>LLM code agents · kernel synthesizers · autonomous autotuners</div>
+      <div class="hop">synthesize</div>
+      <div class="layer soft2"><span class="tag">Compilers &amp; DSLs</span>MLIR dialects · tile languages · schedulers — humans, too</div>
+      <div class="hop">lower</div>
+      <div class="layer visa"><span class="tag">The contract surface</span><b>Virtual ISA</b><small>self-describing · verifiable · versioned</small></div>
+      <div class="hop">legalize &amp; bind</div>
+      <div class="layer hard"><span class="tag">Vendor stacks</span>ptxas · tileiras · ptoas · XLA</div>
+      <div class="hop">execute</div>
+      <div class="layer hard2"><span class="tag">Silicon</span>GPU · NPU · TPU · dataflow fabrics · PIM</div>
+      <div class="feedback" aria-hidden="true"><span>cost models · counters · semantics</span></div>
+      <figcaption class="stack-caption">// agents write downward. silicon reports back up. VISA is the loop's contract.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= NEWS ================= -->
+<div class="wrap">
+  <aside class="news" aria-label="News">
+    <ul>
+      <li><time datetime="2026-08">Aug 2026</time><p>Slot confirmed — VISA runs <strong>Saturday, October 31, 13:00 – 17:00 EET</strong> (afternoon workshop slot).</p></li>
+      <li><time datetime="2026-08">Aug 2026</time><p>The call for papers is out — submissions are due <strong>September 11, 2026 (AoE)</strong>. Agent-facing work is the flagship topic.</p></li>
+      <li><time datetime="2026-08">Aug 2026</time><p>VISA has been accepted as a workshop at <a href="https://www.microarch.org/micro59/" rel="external">MICRO 2026</a> in Athens.</p></li>
+    </ul>
+  </aside>
+</div>
+
+<!-- ================= FLAGSHIP: AGENTIC ERA ================= -->
+<section class="band" id="agents">
+  <div class="wrap">
+    <div class="sec-label"><code>visa.agents</code><span class="rule"></span></div>
+    <h2>Built for the agentic era</h2>
+    <p class="lede">The next generation of accelerator code will largely be written by machines. LLM-driven synthesizers and autonomous autotuners are becoming first-class producers of kernels — which makes the virtual ISA the <em>contract surface between AI agents and silicon</em>. VISA 2026 puts that contract at the center of the program:</p>
+    <div class="agent-grid">
+      <div class="agent-card"><code>self-describing</code><p>ISAs that expose semantics, cost, and resource footprints in forms an LLM reasoner can actually use.</p></div>
+      <div class="agent-card"><code>verifiable contracts</code><p>Well-typed interfaces that make agent-generated kernels checkable — equivalence, not vibes.</p></div>
+      <div class="agent-card"><code>closed-loop autotuning</code><p>LLM-guided lowering and kernel synthesis, driven by profiling signals fed back through the ISA.</p></div>
+      <div class="agent-card"><code>safety &amp; sandboxing</code><p>Executing kernels a model wrote without having to trust the model.</p></div>
+      <div class="agent-card"><code>agent-programmability</code><p>Benchmarks that measure how well an ISA serves a machine programmer, not just a human one.</p></div>
+      <div class="agent-card"><code>self-evolving ISAs</code><p>Abstractions and lowering strategies that agents refine through iterative feedback.</p></div>
+    </div>
+    <p class="band-cta">This is the workshop's flagship theme — see <a href="cfp.html#agents">visa.agents in the call for papers</a>. It doesn't narrow the scope: ISA design, compilation, DSLs, and hardware co-design remain the core of the program — and every one of them gains a new dimension when the programmer is an agent.</p>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="sec wrap" id="about">
+  <div class="sec-label"><code>visa.about</code><span class="rule"></span></div>
+  <h2>Why a virtual ISA, and why now</h2>
+  <div class="lede two-col">
+    <p>Two shifts are colliding. Below the stack, the accelerator landscape keeps transforming: TPUs, GPUs, NPUs, wafer-scale engines, and dataflow fabrics each spawn their own toolchain, compiler backend, and software ecosystem — duplicated engineering, poor portability, steep learning curves. Above the stack, the programmer is changing too: LLM code agents and autonomous autotuners are starting to write a growing share of accelerator kernels — from AlphaEvolve's evolved kernels to KernelBench-style evaluations of LLM kernel generation, machine-written accelerator code has become a public, measurable reality — and these new programmers need interfaces designed for machine reasoning, not just human intuition.</p>
+    <p>A <em>virtual ISA</em> — a stable, hardware-agnostic abstraction between programming models and hardware backends — is where these shifts meet. It decouples what a computation expresses from how silicon executes it, enabling compiler reuse across heterogeneous targets, software longevity across hardware generations, and optimization at the right level of the stack. For agents, it is more: the self-describing, verifiable contract that makes machine-written code trustworthy. Momentum is building across MLIR's dialect ecosystem (StableHLO, TOSA), established virtual ISAs such as NVIDIA PTX and SPIR-V, and a new wave of tile-level virtual instruction sets — NVIDIA's CUDA Tile IR and Ascend's Parallel Tile Operation (PTO), both open-sourced within the past year — that raise the abstraction from threads to tiles while keeping the contract versioned and portable. The silicon side is moving just as fast: at this July's DAC in Long Beach, agentic AI dominated the conversation, with autonomous multi-agent flows for RTL design, verification, and debug presented as production capability by major EDA vendors and startups alike. The agents are arriving at both ends of the stack — the contract between them is the missing piece.</p>
+    <p>What the community lacks is a venue that treats these questions together — virtual ISA design, compilation, DSL integration, hardware co-design, and above all the agent-facing interface. VISA 2026 is that venue. We invite 4–6 page papers on work in progress, positions, visions, and early results — see the <a href="cfp.html">call for papers</a> for the full scope.</p>
+  </div>
+</section>
+
+<!-- ================= DATES ================= -->
+<section class="sec wrap" id="dates">
+  <div class="sec-label"><code>visa.dates</code><span class="rule"></span></div>
+  <h2>Important dates</h2>
+  <table class="dates">
+    <tbody>
+      <tr class="due">
+        <td>Paper submission deadline</td>
+        <td class="when">Fri, Sep 11, 2026</td>
+      </tr>
+      <tr>
+        <td>Author notification</td>
+        <td class="when">Mon, Oct 5, 2026</td>
+      </tr>
+      <tr>
+        <td>Camera-ready papers</td>
+        <td class="when">Fri, Oct 16, 2026</td>
+      </tr>
+      <tr>
+        <td>Workshop — Saturday afternoon</td>
+        <td class="when">Oct 31 · 13:00 EET</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="dates-note">// all deadlines are 23:59 Anywhere on Earth (AoE)</p>
+</section>
+
+<!-- ================= KEYNOTES ================= -->
+<section class="sec wrap" id="keynotes">
+  <div class="sec-label"><code>visa.keynotes</code><span class="rule"></span></div>
+  <h2>Keynotes</h2>
+  <div class="keynote-grid">
+    <article class="keynote">
+      <span class="k-tag">Keynote 1 · 13:10 EET</span>
+      <h3>Heng Liao</h3>
+      <p class="aff">Huawei Fellow &amp; Chief Scientist, Huawei Technologies</p>
+      <p>Chief architect of the Da Vinci AI Core, leading the design of the Ascend AI processor family — from AI Core microarchitecture and tensor/vector/scalar pipelines to the on-chip memory hierarchy and instruction set.</p>
+      <p class="tba">Title &amp; abstract — to be announced</p><!-- TODO -->
+    </article>
+    <article class="keynote">
+      <span class="k-tag">Keynote 2 · 15:00 EET</span>
+      <h3>Onur Mutlu</h3>
+      <p class="aff">Professor, ETH Zürich</p>
+      <p>Leads research spanning memory systems, processing-in-memory, and hardware/software co-design for modern computing platforms — themes at the heart of the virtual-to-physical boundary.</p>
+      <p class="tba">Title &amp; abstract — to be announced</p><!-- TODO -->
+    </article>
+  </div>
+</section>
+
+<!-- ================= PROGRAM ================= -->
+<section class="sec wrap" id="program">
+  <div class="sec-label"><code>visa.program</code><span class="rule"></span></div>
+  <h2>Program</h2>
+  <table class="schedule">
+    <thead>
+      <tr><th scope="col">Time (EET)</th><th scope="col">Session</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="t">13:00 – 13:10</td><td class="what"><b>Opening remarks</b></td></tr>
+      <tr class="row-key"><td class="t">13:10 – 13:50</td><td class="what"><b>Keynote 1 — Heng Liao</b><small>Huawei Technologies</small></td></tr>
+      <tr><td class="t">13:50 – 14:35</td><td class="what"><b>Paper session 1 — Agent-facing virtual ISAs</b><small>3 talks</small></td></tr>
+      <tr class="row-break"><td class="t">14:35 – 15:00</td><td>Coffee break</td></tr>
+      <tr class="row-key"><td class="t">15:00 – 15:40</td><td class="what"><b>Keynote 2 — Onur Mutlu</b><small>ETH Zürich</small></td></tr>
+      <tr><td class="t">15:40 – 16:25</td><td class="what"><b>Paper session 2 — Design, compilation &amp; co-design</b><small>3 talks</small></td></tr>
+      <tr class="row-panel"><td class="t">16:25 – 17:10</td><td class="what"><b>Panel — The future of the virtual ISA in the agentic era</b><small>Panelists to be announced</small></td></tr><!-- TODO: panelists -->
+      <tr><td class="t">17:10 – 17:20</td><td class="what"><b>Closing remarks</b></td></tr>
+    </tbody>
+  </table>
+  <p class="dates-note">// official slot 13:00 – 17:00 EET · the panel and closing use the room's agreed flexibility (hard stop 17:30)</p>
+</section>
+
+<!-- ================= PEOPLE ================= -->
+<section class="sec wrap" id="people">
+  <div class="sec-label"><code>visa.people</code><span class="rule"></span></div>
+  <h2>Organizing committee</h2>
+  <div class="people-grid">
+    <article class="person">
+      <h3>Heng Liao</h3>
+      <p class="aff">Huawei Technologies</p>
+      <p>Huawei Fellow &amp; Chief Scientist; chief architect of the Da Vinci AI Core and the Ascend AI processor family.</p>
+    </article>
+    <article class="person">
+      <h3>Luca Benini</h3>
+      <p class="aff">ETH Zürich · Università di Bologna</p>
+      <p>Chair of Digital Circuits and Systems at ETH Zürich; energy-efficient parallel computing and machine-learning hardware.</p>
+    </article>
+    <article class="person">
+      <h3>Youhui Zhang</h3>
+      <p class="aff">Tsinghua University</p>
+      <p>Professor of computer science; processor microarchitecture, neuromorphic chips (Tianjic), and novel architectures.</p>
+    </article>
+    <article class="person">
+      <h3>Bingsheng He</h3>
+      <p class="aff">National University of Singapore</p>
+      <p>Professor and Vice Dean (Research) at NUS Computing; big-data systems and GPU / emerging-hardware acceleration.</p>
+    </article>
+    <article class="person">
+      <h3>Minyi Guo</h3>
+      <p class="aff">Shanghai Jiao Tong University</p>
+      <p>Zhiyuan Chair Professor and IEEE Fellow; parallel computing, parallelizing compilers, and green computing.</p>
+    </article>
+    <article class="person">
+      <h3>Wei Shi</h3>
+      <p class="aff">Huawei Technologies</p>
+      <p>Director of the Chip Software–Hardware Co-Design Department; computer architecture, LLM agents, and storage systems.</p>
+    </article>
+  </div>
+
+  <div class="tpc">
+    <h3>Technical program committee</h3>
+    <!-- TODO: add affiliations for confirmed TPC members; extend as invitations are accepted -->
+    <p class="tpc-names">Ruoyu Zhou<span class="dot">·</span>Wenbo Sun<span class="dot">·</span>Reza Azimi<span class="dot">·</span>Zhang Chen<span class="dot">·</span>Zhendong Zhang<span class="dot">·</span>Zhenyu Bai<span class="dot">·</span>Yue Zha<span class="dot">·</span>Xuan Zhong</p>
+    <p class="tpc-note">// partial list — the full committee (~20 members) will be announced with the final CFP. Every paper receives at least 3 reviews.</p>
+  </div>
+</section>
+
+<!-- ================= VENUE ================= -->
+<section class="sec wrap" id="venue">
+  <div class="sec-label"><code>visa.venue</code><span class="rule"></span></div>
+  <h2>Venue &amp; registration</h2>
+  <div class="lede">
+    <p>VISA 2026 takes place in <strong>Athens, Greece</strong>, as part of the workshop program of <a href="https://www.microarch.org/micro59/" rel="external">MICRO 2026</a>, the 59th IEEE/ACM International Symposium on Microarchitecture. VISA runs on <strong>Saturday, October 31, in the afternoon workshop slot — 13:00 to 17:00 EET</strong>, with a soft close by 17:30.</p>
+    <p style="margin-top:1em">Registration is handled through MICRO 2026 — a workshop/tutorial registration covers attendance. The room will be announced together with the final program.<!-- TODO: room --> Questions about the workshop? Write to <a href="mailto:visa.workshop.chairs@gmail.com">visa.workshop.chairs@gmail.com</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-foot">
+  <div class="foot-in wrap" style="padding-left:24px;padding-right:24px">
+    <div>
+      <p class="foot-mark">VISA 2026</p>
+      <p>The 1st Workshop on Virtual ISA for Rapidly Evolving Architectures — the virtual ISA of the agentic era. Saturday, Oct 31, 2026 · MICRO 2026, Athens.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:visa.workshop.chairs@gmail.com">visa.workshop.chairs@gmail.com</a></li>
+        <li><a href="https://visaworkshop.github.io/2026">visaworkshop.github.io/2026</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <ul>
+        <li><a href="cfp.html">Call for papers</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="https://www.microarch.org/micro59/" rel="external">MICRO 2026</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© 2026 VISA workshop organizing committee</span>
+    <span>a stable interface since 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

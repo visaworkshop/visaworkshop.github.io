@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Call for Papers — VISA 2026 · Virtual ISA for the Agentic Era</title>
+<meta name="description" content="Call for papers for VISA 2026 (MICRO 2026, Athens — Saturday afternoon, Oct 31). Flagship topic: agent-facing virtual ISAs — the contract surface between LLM code agents and silicon. Short papers (4–6 pages, IEEE format) due September 11, 2026 (AoE)."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='5' width='20' height='6' rx='1' fill='%230D5EAF'/%3E%3Crect x='3' y='13' width='26' height='6' rx='1' fill='%23122439'/%3E%3Crect x='6' y='21' width='20' height='6' rx='1' fill='%23B26B33'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   VISA 2026 — design tokens (duplicated from index.html on purpose, so each
+   year's directory is a fully self-contained archive; edit both files when
+   changing shared styles).
+   ========================================================================== */
+:root{
+  --marble:#F6F7F5;
+  --paper:#FFFFFF;
+  --ink:#122439;
+  --mist:#54677C;
+  --aegean:#0D5EAF;
+  --aegean-deep:#0A4A8B;
+  --aegean-tint:#E9F1FB;
+  --aegean-tint-2:#DCE9F8;
+  --copper:#B26B33;
+  --copper-tint:#F8F0E7;
+  --copper-tint-2:#F2E4D3;
+  --line:#D5DDE5;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono","SF Mono",Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--marble);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--aegean);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--aegean);outline-offset:2px;border-radius:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ---------- header ---------- */
+.site-head{border-bottom:1px solid var(--line);background:var(--marble)}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 24px;flex-wrap:wrap}
+.wordmark{font-family:var(--serif);font-weight:600;font-size:1.35rem;color:var(--ink);letter-spacing:.01em}
+.wordmark small{font-family:var(--mono);font-weight:400;font-size:.8em;color:var(--aegean);margin-left:.35em}
+.site-nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.site-nav a{font-family:var(--mono);font-size:.82rem;color:var(--mist)}
+.site-nav a:hover{color:var(--ink);text-decoration:none}
+.site-nav a.nav-cta{color:#fff;background:var(--aegean);padding:8px 14px;border-radius:4px}
+.site-nav a.nav-cta:hover{background:var(--aegean-deep)}
+
+/* ---------- page hero ---------- */
+.page-hero{padding:60px 0 44px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;color:var(--aegean);margin-bottom:16px}
+.eyebrow .sep{color:var(--line);margin:0 .5em}
+h1.display{font-family:var(--serif);font-weight:600;line-height:1.05;font-size:clamp(2.4rem,5.4vw,3.6rem);letter-spacing:-.01em;max-width:18ch}
+.page-hero .sub{font-family:var(--serif);font-style:italic;color:var(--mist);font-size:1.25rem;margin:12px 0 26px;max-width:52ch;line-height:1.4}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.fact{font-family:var(--mono);font-size:.8rem;color:var(--ink);border:1px solid var(--line);background:var(--paper);padding:7px 12px;border-radius:4px}
+.fact b{color:var(--aegean);font-weight:500}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-block;font-family:var(--sans);font-weight:600;font-size:1rem;padding:13px 22px;border-radius:4px;border:1.5px solid transparent}
+.btn:hover{text-decoration:none}
+.btn-solid{background:var(--aegean);color:#fff}
+.btn-solid:hover{background:var(--aegean-deep)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--marble)}
+.cta-note{font-family:var(--mono);font-size:.78rem;color:var(--mist)}
+
+/* ---------- sections ---------- */
+.sec{padding:60px 0;border-top:1px solid var(--line)}
+.page-hero + .sec{border-top:none}
+.sec-label{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.sec-label code{font-family:var(--mono);font-size:.8rem;color:var(--copper);letter-spacing:.04em}
+.sec-label .rule{flex:1;height:1px;background:var(--line)}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,3.4vw,2.2rem);line-height:1.15;margin-bottom:20px}
+.lede{max-width:68ch}
+.lede p + p{margin-top:1em}
+
+/* ---------- topics ---------- */
+.topic{border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:24px 26px;margin-bottom:18px}
+.topic.featured{border-top:3px solid var(--aegean);background:var(--aegean-tint)}
+.flag{
+  display:inline-block;font-family:var(--mono);font-size:.64rem;letter-spacing:.09em;
+  text-transform:uppercase;background:var(--aegean);color:#fff;
+  padding:3px 9px;border-radius:3px;margin-left:10px;vertical-align:2px;
+}
+.topic .t-tag{font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;color:var(--copper);display:block;margin-bottom:6px}
+.topic h3{font-family:var(--serif);font-weight:600;font-size:1.3rem;line-height:1.25;margin-bottom:8px}
+.topic p{font-size:.97rem}
+.topic p + p{margin-top:.7em}
+.topic .incl{color:var(--mist);font-size:.93rem}
+.topic .incl b{color:var(--ink);font-weight:600}
+.topics-note{font-family:var(--mono);font-size:.78rem;color:var(--mist);margin-top:6px}
+
+/* ---------- submission ---------- */
+.kv{max-width:760px;border:1px solid var(--line);background:var(--paper);border-radius:4px;overflow:hidden}
+.kv-row{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--line)}
+.kv-row:last-child{border-bottom:none}
+.kv-row dt{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;color:var(--mist);padding:14px 18px;background:var(--marble)}
+.kv-row dd{padding:14px 18px;font-size:.97rem}
+.submit-strip{margin-top:26px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+
+/* ---------- dates table ---------- */
+table{width:100%;border-collapse:collapse}
+.dates{max-width:640px}
+.dates td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:baseline}
+.dates td:first-child{width:56%}
+.dates .when{font-family:var(--mono);font-size:.88rem;white-space:nowrap}
+.dates tr.due{background:var(--aegean-tint);border-left:3px solid var(--aegean)}
+.dates tr.due td{font-weight:600}
+.dates-note{font-family:var(--mono);font-size:.76rem;color:var(--mist);margin-top:12px}
+
+/* ---------- review ---------- */
+.review-card{max-width:68ch;border-left:3px solid var(--aegean);background:var(--aegean-tint);border-radius:4px;padding:20px 24px}
+.review-card p + p{margin-top:.7em}
+
+/* ---------- footer ---------- */
+.site-foot{background:var(--ink);color:#C7D2DE;margin-top:60px}
+.foot-in{display:grid;grid-template-columns:1.2fr .9fr .9fr;gap:36px;padding:56px 24px 40px}
+.site-foot h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#8FB8E8;margin-bottom:12px;font-weight:500}
+.site-foot p,.site-foot li{font-size:.92rem}
+.site-foot ul{list-style:none}
+.site-foot li{margin-bottom:8px}
+.site-foot a{color:#E8EEF5}
+.site-foot .foot-mark{font-family:var(--serif);font-weight:600;font-size:1.3rem;color:#fff;margin-bottom:10px}
+.foot-base{border-top:1px solid #2A3E56;padding:18px 24px;font-family:var(--mono);font-size:.72rem;color:#7A8CA0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---------- responsive ---------- */
+@media (max-width:920px){
+  .foot-in{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .kv-row{grid-template-columns:1fr}
+  .kv-row dt{padding-bottom:2px}
+  .kv-row dd{padding-top:6px}
+  .page-hero{padding:44px 0 36px}
+  .sec{padding:46px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-in wrap" style="padding-left:24px;padding-right:24px">
+    <a class="wordmark" href="./">VISA<small>2026</small></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html#about">About</a>
+      <a href="index.html#dates">Dates</a>
+      <a href="index.html#keynotes">Keynotes</a>
+      <a href="index.html#program">Program</a>
+      <a href="index.html#people">People</a>
+      <a href="index.html#venue">Venue</a>
+      <a class="nav-cta" href="cfp.html" aria-current="page">Call for papers</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= PAGE HERO ================= -->
+<section class="page-hero wrap">
+  <p class="eyebrow">VISA 2026<span class="sep">·</span>MICRO 2026, Athens<span class="sep">·</span>Sat, Oct 31 · 13:00 – 17:00 EET</p>
+  <h1 class="display">Call for papers</h1>
+  <p class="sub">Short papers on the contract surface between AI agents, compilers, and rapidly evolving silicon.</p>
+  <div class="facts">
+    <span class="fact"><b>4–6 pages</b> · IEEE format</span>
+    <span class="fact">WIP · position · vision · early results</span>
+    <span class="fact">Due <b>Sep 11, 2026</b> (AoE)</span>
+  </div>
+  <div class="cta-row">
+    <!-- TODO: replace # with the HotCRP submission URL once the site is live,
+         e.g. https://visa2026.hotcrp.com — and delete the cta-note. -->
+    <a class="btn btn-solid" href="#" title="Submission site opens soon">Submit a paper</a>
+    <span class="cta-note">// HotCRP link will appear here as soon as submissions open</span>
+  </div>
+</section>
+
+<!-- ================= SCOPE ================= -->
+<section class="sec wrap" id="scope">
+  <div class="sec-label"><code>visa.scope</code><span class="rule"></span></div>
+  <h2>Scope</h2>
+  <div class="lede">
+    <p>VISA 2026 examines the <em>virtual ISA</em> — a stable, hardware-agnostic abstraction between high-level programming models and diverse hardware backends — as the pivotal interface of the <strong>agentic era</strong>: the contract surface where LLM-driven code synthesizers, autonomous autotuners, compilers, and microarchitectural innovation meet. When the programmer is a machine, the ISA must be self-describing enough to reason over and verifiable enough to trust.</p>
+    <p>We invite <strong>short papers (4–6 pages, IEEE format)</strong> describing work in progress, position papers, vision papers, or early results. The scope spans the full accelerator stack — ISA design and semantics, compilation and optimization, DSLs and programming models, hardware co-design, and deployment experience. The <a href="#agents">agent-facing interface</a> is the flagship theme that runs through all of them: wherever your work sits, we encourage you to ask how the problem changes when the primary reader and writer of the ISA is a machine.</p>
+  </div>
+</section>
+
+<!-- ================= TOPICS ================= -->
+<section class="sec wrap" id="topics">
+  <div class="sec-label"><code>visa.topics</code><span class="rule"></span></div>
+  <h2>Topics of interest</h2>
+
+  <article class="topic featured" id="agents">
+    <span class="t-tag">visa.agents</span>
+    <h3>Agent-facing virtual ISA interfaces<span class="flag">flagship topic</span></h3>
+    <p>As LLM-driven code synthesizers and autonomous autotuners become first-class producers of accelerator code, the virtual ISA increasingly serves as the contract surface between AI agents and silicon. This is the question VISA exists to ask — and a lens we encourage across every topic below.</p>
+    <p class="incl">Self-describing virtual ISAs that expose semantics, cost, and resource footprints to LLM reasoners · well-typed, verifiable contracts for reliable agent code generation and equivalence checking · LLM-guided lowering, kernel synthesis, and closed-loop autotuning through the virtual ISA layer · safety and sandboxing for agent-generated kernels · benchmarks for the <b>agent-programmability</b> of a virtual ISA · self-evolving virtual ISAs that let agents refine abstractions and lowering strategies through iterative feedback.</p>
+  </article>
+
+  <article class="topic">
+    <span class="t-tag">visa.design</span>
+    <h3>Virtual ISA design &amp; abstraction</h3>
+    <p class="incl">Principles for defining stable virtual ISA boundaries · formal semantics, correctness, and versioning strategies · capability negotiation, feature discovery, and introspection mechanisms · effect systems, memory models, and concurrency semantics suited to heterogeneous architectures.</p>
+  </article>
+
+  <article class="topic">
+    <span class="t-tag">visa.codesign</span>
+    <h3>Virtual ISA / (micro)architecture co-design &amp; optimization</h3>
+    <p>How can architects exploit a virtual ISA abstraction to deliver aggressive hardware optimizations while preserving programmability — echoing recent MICRO/HPCA/ISCA themes such as LLM serving, MoE and sparsity acceleration, dataflow fabrics, near-/in-memory compute, chiplet systems, and KV-cache-centric memory hierarchies?</p>
+    <p class="incl">Late binding of physical resources at virtual-to-physical lowering · cost-model-aware virtual ISAs that surface architectural knobs (parallelism, dataflow, precision, locality) without leaking microarchitectural detail · reconfigurable and spatial backends targeted from a common virtual ISA · co-designing virtual ISA primitives with emerging hardware features · dynamic-shape execution under stable semantics · quantitative studies of the <b>programmability–performance Pareto frontier</b>.</p>
+  </article>
+
+  <article class="topic">
+    <span class="t-tag">visa.compilers</span>
+    <h3>Compiler optimizations</h3>
+    <p class="incl">Lowering and legalization targeting virtual ISAs · optimization across the virtual-to-physical ISA boundary · polyhedral, tile-level, and search-based techniques · profile-guided compilation, equivalence checking, and differential testing at the virtual ISA level · LLM-aware compilation (kernel fusion, KV-cache-aware scheduling, MoE graph partitioning) · directive- and may-directive-based compilation guided by programming-model annotations that inform but do not over-constrain the optimizer.</p>
+  </article>
+
+  <article class="topic">
+    <span class="t-tag">visa.dsl</span>
+    <h3>DSLs &amp; programming models</h3>
+    <p class="incl">DSL frontends (Triton-style tile languages, dataflow and graph DSLs, agentic pipeline languages) lowering to virtual ISAs · type systems for accelerator programming · auto-tuning and search-based code generation · abstractions for emerging AI workloads — LLM inference and training, MoE routing, long-context attention, KV-cache management, multi-modal and agentic serving pipelines · DSL-embedded profiling APIs that expose counters, traces, and hardware metrics as first-class language constructs for feedback-driven optimization.</p>
+  </article>
+
+  <article class="topic">
+    <span class="t-tag">visa.infra</span>
+    <h3>Case studies &amp; infrastructure</h3>
+    <p class="incl">Real-world virtual ISA deployments (AI, HPC, networking, signal processing) · open-source frameworks and benchmarks · simulation, modeling, and HW/SW co-design flows enabled by virtual ISAs · production lessons from MLIR dialects, PTX, SPIR-V, StableHLO, TOSA, Triton-IR, CUDA Tile IR, Ascend PTO, and related stacks.</p>
+  </article>
+
+  <p class="topics-note">// topics include, but are not limited to, the above.</p>
+</section>
+
+<!-- ================= SUBMISSION ================= -->
+<section class="sec wrap" id="submission">
+  <div class="sec-label"><code>visa.submit</code><span class="rule"></span></div>
+  <h2>Submission guidelines</h2>
+  <dl class="kv">
+    <div class="kv-row">
+      <dt>length &amp; format</dt>
+      <dd>4–6 pages in the <a href="https://www.ieee.org/conferences/publishing/templates.html" rel="external">IEEE conference (two-column) template</a>.</dd>
+    </div>
+    <div class="kv-row">
+      <dt>paper types</dt>
+      <dd>Work in progress, position papers, vision papers, and early results are all welcome.</dd>
+    </div>
+    <div class="kv-row">
+      <dt>anonymity</dt>
+      <dd>Reviewing is single-blind — author names and affiliations appear on the submission.</dd>
+    </div>
+    <div class="kv-row">
+      <dt>where</dt>
+      <!-- TODO: replace with the live HotCRP link -->
+      <dd>Via HotCRP — the link will be posted here as soon as submissions open.</dd>
+    </div>
+    <div class="kv-row">
+      <dt>publication</dt>
+      <!-- TODO: confirm the proceedings policy with the committee before the CFP goes wide -->
+      <dd>Accepted papers are presented at the workshop and posted on this website. The workshop is non-archival: submission does not preclude later publication at other venues.</dd>
+    </div>
+    <div class="kv-row">
+      <dt>presentation</dt>
+      <!-- TODO: confirm with MICRO whether remote presentation is permitted -->
+      <dd>At least one author of each accepted paper registers for the workshop through MICRO 2026 and presents the work.</dd>
+    </div>
+  </dl>
+  <div class="submit-strip">
+    <!-- TODO: same HotCRP link as above -->
+    <a class="btn btn-solid" href="#" title="Submission site opens soon">Submit a paper</a>
+    <a class="btn btn-ghost" href="mailto:visa.workshop.chairs@gmail.com">Ask the chairs a question</a>
+  </div>
+</section>
+
+<!-- ================= DATES ================= -->
+<section class="sec wrap" id="dates">
+  <div class="sec-label"><code>visa.dates</code><span class="rule"></span></div>
+  <h2>Important dates</h2>
+  <table class="dates">
+    <tbody>
+      <tr class="due">
+        <td>Paper submission deadline</td>
+        <td class="when">Fri, Sep 11, 2026</td>
+      </tr>
+      <tr>
+        <td>Author notification</td>
+        <td class="when">Mon, Oct 5, 2026</td>
+      </tr>
+      <tr>
+        <td>Camera-ready papers</td>
+        <td class="when">Fri, Oct 16, 2026</td>
+      </tr>
+      <tr>
+        <td>Workshop — Saturday afternoon</td>
+        <td class="when">Oct 31 · 13:00 EET</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="dates-note">// all deadlines are 23:59 Anywhere on Earth (AoE)</p>
+</section>
+
+<!-- ================= REVIEW ================= -->
+<section class="sec wrap" id="review">
+  <div class="sec-label"><code>visa.review</code><span class="rule"></span></div>
+  <h2>Review process</h2>
+  <div class="review-card">
+    <p>Every submission is evaluated by <strong>at least three members</strong> of the technical program committee on four criteria: <strong>relevance</strong> to the workshop's scope, <strong>originality</strong>, <strong>soundness</strong>, and <strong>potential to spark discussion</strong>.</p>
+    <p>The TPC of roughly 20 members spans academia and industry across MLIR/StableHLO/TOSA, Triton and tile-language compilers, PTX/SPIR-V, GPU and TPU ISAs, dataflow architectures, MoE/LLM serving, processing-in-memory, RISC-V extensions, and LLM-driven code synthesis.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-foot">
+  <div class="foot-in wrap" style="padding-left:24px;padding-right:24px">
+    <div>
+      <p class="foot-mark">VISA 2026</p>
+      <p>The 1st Workshop on Virtual ISA for Rapidly Evolving Architectures — the virtual ISA of the agentic era. Saturday, Oct 31, 2026 · MICRO 2026, Athens.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:visa.workshop.chairs@gmail.com">visa.workshop.chairs@gmail.com</a></li>
+        <li><a href="https://visaworkshop.github.io/2026">visaworkshop.github.io/2026</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <ul>
+        <li><a href="index.html">Workshop home</a></li>
+        <li><a href="index.html#program">Program</a></li>
+        <li><a href="https://www.microarch.org/micro59/" rel="external">MICRO 2026</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© 2026 VISA workshop organizing committee</span>
+    <span>a stable interface since 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
