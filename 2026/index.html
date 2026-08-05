@@ -68,7 +68,7 @@ a:hover{text-decoration:underline}
 .site-nav a.nav-cta:hover{background:var(--aegean-deep)}
 
 /* ---------- hero ---------- */
-.hero{padding:72px 0 64px}
+.hero{padding-top:72px;padding-bottom:64px}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .eyebrow{font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;color:var(--aegean);margin-bottom:18px}
 .eyebrow .sep{color:var(--line);margin:0 .5em}
@@ -196,7 +196,7 @@ h1.display .yr{color:var(--aegean)}
 @media (max-width:580px){.agent-grid{grid-template-columns:1fr}}
 
 /* ---------- sections ---------- */
-.sec{padding:64px 0;border-top:1px solid var(--line)}
+.sec{padding-top:64px;padding-bottom:64px;border-top:1px solid var(--line)}
 .sec-label{display:flex;align-items:center;gap:14px;margin-bottom:10px}
 .sec-label code{
   font-family:var(--mono);font-size:.8rem;color:var(--copper);letter-spacing:.04em;
@@ -276,8 +276,9 @@ table{width:100%;border-collapse:collapse}
 }
 @media (max-width:580px){
   .people-grid{grid-template-columns:1fr}
-  .hero{padding:52px 0 48px}
-  .sec{padding:48px 0}
+  .hero{padding-top:52px;padding-bottom:48px}
+  .sec{padding-top:48px;padding-bottom:48px}
+  .site-nav{gap:12px 16px}
   .schedule .t{width:auto}
 }
 </style>
