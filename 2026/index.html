@@ -105,6 +105,7 @@ h1.display .yr{color:var(--aegean)}
 .btn-ghost{border-color:var(--ink);color:var(--ink)}
 .btn-ghost:hover{background:var(--ink);color:var(--marble)}
 .cta-note{font-family:var(--mono);font-size:.78rem;color:var(--mist)}
+.pending-highlight{display:inline-block;background:#fff2a8;color:var(--ink);padding:5px 9px;border-left:3px solid #d9a400;border-radius:2px}
 
 /* ---------- the signature: the agentic loop ---------- */
 .stack{display:flex;flex-direction:column;gap:0;padding:6px 40px 6px 0;position:relative}
@@ -219,13 +220,8 @@ table{width:100%;border-collapse:collapse}
 .dates-note{font-family:var(--mono);font-size:.76rem;color:var(--mist);margin-top:12px}
 
 /* ---------- keynotes ---------- */
-.keynote-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.keynote{border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:26px 26px 22px;border-top:3px solid var(--aegean)}
-.keynote .k-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--aegean);margin-bottom:10px;display:block}
-.keynote h3{font-family:var(--serif);font-weight:600;font-size:1.45rem;line-height:1.2}
-.keynote .aff{font-family:var(--mono);font-size:.8rem;color:var(--mist);margin:4px 0 12px}
-.keynote p{font-size:.95rem}
-.keynote .tba{font-family:var(--mono);font-size:.78rem;color:var(--copper);margin-top:12px}
+.keynote-status{max-width:760px;border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:24px 26px}
+.keynote-status p{font-size:1rem;color:var(--mist);max-width:68ch}
 
 /* ---------- program ---------- */
 .schedule th{
@@ -269,7 +265,6 @@ table{width:100%;border-collapse:collapse}
 @media (max-width:920px){
   .hero-grid{grid-template-columns:1fr;gap:44px}
   .layer.visa{margin:0 -8px}
-  .keynote-grid{grid-template-columns:1fr}
   .people-grid{grid-template-columns:1fr 1fr}
   .two-col{columns:1}
   .foot-in{grid-template-columns:1fr}
@@ -319,8 +314,9 @@ table{width:100%;border-collapse:collapse}
       <div class="cta-row">
         <a class="btn btn-solid" href="cfp.html">Read the call for papers</a>
         <a class="btn btn-ghost" href="#program">See the program</a>
+        <a class="btn btn-ghost" href="https://visa2026.hotcrp.com/" rel="external">Open HotCRP</a>
       </div>
-      <p class="cta-note" style="margin-top:14px">Submission site (HotCRP) opens soon · deadline Sep 11, 2026 (AoE)</p>
+      <p class="cta-note pending-highlight" style="margin-top:14px">HotCRP activation is pending · submissions will open after approval · deadline Sep 25, 2026 (AoE)</p>
     </div>
 
     <!-- The signature: the agentic loop — agents write down through the ISA; the ISA reports back up -->
@@ -345,7 +341,7 @@ table{width:100%;border-collapse:collapse}
   <aside class="news" aria-label="News">
     <ul>
       <li><time datetime="2026-08">Aug 2026</time><p>Slot confirmed — VISA runs <strong>Saturday, October 31, 13:00 – 17:00 EET</strong> (afternoon workshop slot).</p></li>
-      <li><time datetime="2026-08">Aug 2026</time><p>The call for papers is out — submissions are due <strong>September 11, 2026 (AoE)</strong>. Agent-facing work is the flagship topic.</p></li>
+      <li><time datetime="2026-08-27">Aug 27, 2026</time><p>Submission deadline extended — papers are now due <strong>Friday, September 25, 2026 (AoE)</strong>.</p></li>
       <li><time datetime="2026-08">Aug 2026</time><p>VISA has been accepted as a workshop at <a href="https://www.microarch.org/micro59/" rel="external">MICRO 2026</a> in Athens.</p></li>
     </ul>
   </aside>
@@ -388,11 +384,11 @@ table{width:100%;border-collapse:collapse}
     <tbody>
       <tr class="due">
         <td>Paper submission deadline</td>
-        <td class="when">Fri, Sep 11, 2026</td>
+        <td class="when">Fri, Sep 25, 2026</td>
       </tr>
       <tr>
         <td>Author notification</td>
-        <td class="when">Mon, Oct 5, 2026</td>
+        <td class="when">Fri, Oct 9, 2026</td>
       </tr>
       <tr>
         <td>Camera-ready papers</td>
@@ -411,21 +407,8 @@ table{width:100%;border-collapse:collapse}
 <section class="sec wrap" id="keynotes">
   <div class="sec-label"><code>visa.keynotes</code><span class="rule"></span></div>
   <h2>Keynotes</h2>
-  <div class="keynote-grid">
-    <article class="keynote">
-      <span class="k-tag">Keynote 1 · 13:10 EET</span>
-      <h3>Heng Liao</h3>
-      <p class="aff">Huawei Fellow &amp; Chief Scientist, Huawei Technologies</p>
-      <p>Chief architect of the Da Vinci AI Core, leading the design of the Ascend AI processor family — from AI Core microarchitecture and tensor/vector/scalar pipelines to the on-chip memory hierarchy and instruction set.</p>
-      <p class="tba">Title &amp; abstract — to be announced</p><!-- TODO -->
-    </article>
-    <article class="keynote">
-      <span class="k-tag">Keynote 2 · 15:00 EET</span>
-      <h3>Onur Mutlu</h3>
-      <p class="aff">Professor, ETH Zürich</p>
-      <p>Leads research spanning memory systems, processing-in-memory, and hardware/software co-design for modern computing platforms — themes at the heart of the virtual-to-physical boundary.</p>
-      <p class="tba">Title &amp; abstract — to be announced</p><!-- TODO -->
-    </article>
+  <div class="keynote-status">
+    <p>The keynote program is being finalized. Speaker details, talk titles, and abstracts will be announced following confirmation.</p>
   </div>
 </section>
 
@@ -439,10 +422,10 @@ table{width:100%;border-collapse:collapse}
     </thead>
     <tbody>
       <tr><td class="t">13:00 – 13:10</td><td class="what"><b>Opening remarks</b></td></tr>
-      <tr class="row-key"><td class="t">13:10 – 13:50</td><td class="what"><b>Keynote 1 — Heng Liao</b><small>Huawei Technologies</small></td></tr>
+      <tr class="row-key"><td class="t">13:10 – 13:50</td><td class="what"><b>Invited talk 1 — details to be announced</b></td></tr>
       <tr><td class="t">13:50 – 14:35</td><td class="what"><b>Paper session 1 — Agent-facing virtual ISAs</b><small>3 talks</small></td></tr>
       <tr class="row-break"><td class="t">14:35 – 15:00</td><td>Coffee break</td></tr>
-      <tr class="row-key"><td class="t">15:00 – 15:40</td><td class="what"><b>Keynote 2 — Onur Mutlu</b><small>ETH Zürich</small></td></tr>
+      <tr class="row-key"><td class="t">15:00 – 15:40</td><td class="what"><b>Invited talk 2 — details to be announced</b></td></tr>
       <tr><td class="t">15:40 – 16:25</td><td class="what"><b>Paper session 2 — Design, compilation &amp; co-design</b><small>3 talks</small></td></tr>
       <tr class="row-panel"><td class="t">16:25 – 17:10</td><td class="what"><b>Panel — The future of the virtual ISA in the agentic era</b><small>Panelists to be announced</small></td></tr><!-- TODO: panelists -->
       <tr><td class="t">17:10 – 17:20</td><td class="what"><b>Closing remarks</b></td></tr>
@@ -491,7 +474,7 @@ table{width:100%;border-collapse:collapse}
   <div class="tpc">
     <h3>Technical program committee</h3>
     <!-- TODO: add affiliations for confirmed TPC members; extend as invitations are accepted -->
-    <p class="tpc-names">Ruoyu Zhou<span class="dot">·</span>Wenbo Sun<span class="dot">·</span>Reza Azimi<span class="dot">·</span>Zhang Chen<span class="dot">·</span>Zhendong Zhang<span class="dot">·</span>Zhenyu Bai<span class="dot">·</span>Yue Zha<span class="dot">·</span>Xuan Zhong</p>
+    <p class="tpc-names">Ruoyu Zhou<span class="dot">·</span>Wenbo Sun<span class="dot">·</span>Reza Azimi<span class="dot">·</span>Zhang Chen<span class="dot">·</span>Zhendong Zhang<span class="dot">·</span>Zhenyu Bai<span class="dot">·</span>Yue Zha<span class="dot">·</span>Xuan Zhong<span class="dot">·</span>Qitang Liu</p>
     <p class="tpc-note">// partial list — the full committee (~20 members) will be announced with the final CFP. Every paper receives at least 3 reviews.</p>
   </div>
 </section>
@@ -526,6 +509,7 @@ table{width:100%;border-collapse:collapse}
       <h4>Links</h4>
       <ul>
         <li><a href="cfp.html">Call for papers</a></li>
+        <li><a href="https://visa2026.hotcrp.com/" rel="external">HotCRP submission site</a></li>
         <li><a href="#program">Program</a></li>
         <li><a href="https://www.microarch.org/micro59/" rel="external">MICRO 2026</a></li>
       </ul>
