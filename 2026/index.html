@@ -220,13 +220,8 @@ table{width:100%;border-collapse:collapse}
 .dates-note{font-family:var(--mono);font-size:.76rem;color:var(--mist);margin-top:12px}
 
 /* ---------- keynotes ---------- */
-.keynote-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.keynote{border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:26px 26px 22px;border-top:3px solid var(--aegean)}
-.keynote .k-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--aegean);margin-bottom:10px;display:block}
-.keynote h3{font-family:var(--serif);font-weight:600;font-size:1.45rem;line-height:1.2}
-.keynote .aff{font-family:var(--mono);font-size:.8rem;color:var(--mist);margin:4px 0 12px}
-.keynote p{font-size:.95rem}
-.keynote .tba{font-family:var(--mono);font-size:.78rem;color:var(--copper);margin-top:12px}
+.keynote-status{max-width:760px;border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:24px 26px}
+.keynote-status p{font-size:1rem;color:var(--mist);max-width:68ch}
 
 /* ---------- program ---------- */
 .schedule th{
@@ -270,7 +265,6 @@ table{width:100%;border-collapse:collapse}
 @media (max-width:920px){
   .hero-grid{grid-template-columns:1fr;gap:44px}
   .layer.visa{margin:0 -8px}
-  .keynote-grid{grid-template-columns:1fr}
   .people-grid{grid-template-columns:1fr 1fr}
   .two-col{columns:1}
   .foot-in{grid-template-columns:1fr}
@@ -413,21 +407,8 @@ table{width:100%;border-collapse:collapse}
 <section class="sec wrap" id="keynotes">
   <div class="sec-label"><code>visa.keynotes</code><span class="rule"></span></div>
   <h2>Keynotes</h2>
-  <div class="keynote-grid">
-    <article class="keynote">
-      <span class="k-tag">Keynote 1 · 13:10 EET</span>
-      <h3>Heng Liao</h3>
-      <p class="aff">Huawei Fellow &amp; Chief Scientist, Huawei Technologies</p>
-      <p>Chief architect of the Da Vinci AI Core, leading the design of the Ascend AI processor family — from AI Core microarchitecture and tensor/vector/scalar pipelines to the on-chip memory hierarchy and instruction set.</p>
-      <p class="tba">Title &amp; abstract — to be announced</p><!-- TODO -->
-    </article>
-    <article class="keynote">
-      <span class="k-tag">Keynote 2 · 15:00 EET</span>
-      <h3>Onur Mutlu</h3>
-      <p class="aff">Professor, ETH Zürich</p>
-      <p>Leads research spanning memory systems, processing-in-memory, and hardware/software co-design for modern computing platforms — themes at the heart of the virtual-to-physical boundary.</p>
-      <p class="tba">Title &amp; abstract — to be announced</p><!-- TODO -->
-    </article>
+  <div class="keynote-status">
+    <p>The keynote program is being finalized. Speaker details, talk titles, and abstracts will be announced following confirmation.</p>
   </div>
 </section>
 
@@ -441,10 +422,10 @@ table{width:100%;border-collapse:collapse}
     </thead>
     <tbody>
       <tr><td class="t">13:00 – 13:10</td><td class="what"><b>Opening remarks</b></td></tr>
-      <tr class="row-key"><td class="t">13:10 – 13:50</td><td class="what"><b>Keynote 1 — Heng Liao</b><small>Huawei Technologies</small></td></tr>
+      <tr class="row-key"><td class="t">13:10 – 13:50</td><td class="what"><b>Invited talk 1 — details to be announced</b></td></tr>
       <tr><td class="t">13:50 – 14:35</td><td class="what"><b>Paper session 1 — Agent-facing virtual ISAs</b><small>3 talks</small></td></tr>
       <tr class="row-break"><td class="t">14:35 – 15:00</td><td>Coffee break</td></tr>
-      <tr class="row-key"><td class="t">15:00 – 15:40</td><td class="what"><b>Keynote 2 — Onur Mutlu</b><small>ETH Zürich</small></td></tr>
+      <tr class="row-key"><td class="t">15:00 – 15:40</td><td class="what"><b>Invited talk 2 — details to be announced</b></td></tr>
       <tr><td class="t">15:40 – 16:25</td><td class="what"><b>Paper session 2 — Design, compilation &amp; co-design</b><small>3 talks</small></td></tr>
       <tr class="row-panel"><td class="t">16:25 – 17:10</td><td class="what"><b>Panel — The future of the virtual ISA in the agentic era</b><small>Panelists to be announced</small></td></tr><!-- TODO: panelists -->
       <tr><td class="t">17:10 – 17:20</td><td class="what"><b>Closing remarks</b></td></tr>
