@@ -82,8 +82,10 @@ python3 -m http.server 8000
 
 Search both files under `2026/` for `TODO`:
 
-- [ ] **HotCRP link** — replace the two `href="#"` submit buttons in `cfp.html`
-      (and drop the "opens soon" notes) once the site is live.
+- [x] **HotCRP link** — wired to `https://visa2026.hotcrp.com/` in the home page,
+      CFP submission controls, and both footers.
+- [ ] **HotCRP activation** — once approved, change the two CFP button labels to
+      "Submit a paper" and remove the pending-activation notes from both pages.
 - [ ] **Room** — announced by MICRO closer to the date; update the Venue
       section on `index.html`.
 - [ ] **Keynote titles & abstracts** — Heng Liao and Onur Mutlu cards on
