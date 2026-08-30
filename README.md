@@ -84,8 +84,10 @@ Search both files under `2026/` for `TODO`:
 
 - [x] **HotCRP link** — wired to `https://visa2026.hotcrp.com/` in the home page,
       CFP submission controls, and both footers.
-- [ ] **HotCRP activation** — once approved, change the two CFP button labels to
-      "Submit a paper" and remove the pending-activation notes from both pages.
+- [x] **HotCRP activation** — the site is live; activation-pending highlights have
+      been removed from the home and CFP pages.
+- [x] **HotCRP submissions** — submission controls use "Submit a paper" and the
+      home and CFP status notes announce that submissions are open.
 - [ ] **Room** — announced by MICRO closer to the date; update the Venue
       section on `index.html`.
 - [ ] **Keynote program** — add confirmed speakers, titles, and abstracts to
