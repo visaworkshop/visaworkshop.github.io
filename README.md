@@ -3,7 +3,7 @@
 Website of the **VISA Workshop — Virtual ISA for Rapidly Evolving Architectures**.
 
 - Permanent entry point: **https://visaworkshop.github.io** (redirects to the current edition)
-- Current edition: **https://visaworkshop.github.io/2026** — the 1st Workshop, co-located with [MICRO 2026](https://www.microarch.org/micro59/), Athens, Greece — **Saturday, Oct 31, 2026, 13:00–17:00 EET** (soft close 17:30)
+- Current edition: **https://visaworkshop.github.io/2026** — the 1st Workshop, co-located with [MICRO 2026](https://www.microarch.org/micro59/), Athens, Greece — **Saturday, Oct 31, 2026, 13:00–18:00 EET**
 - Contact: visa.workshop.chairs@gmail.com
 
 ## Repository layout
@@ -90,9 +90,10 @@ Search both files under `2026/` for `TODO`:
       home and CFP status notes announce that submissions are open.
 - [ ] **Room** — announced by MICRO closer to the date; update the Venue
       section on `index.html`.
-- [ ] **Keynote program** — add confirmed speakers, titles, and abstracts to
-      `index.html` when the invited program is finalized.
-- [ ] **Panelists** — the panel row in the program table.
+- [x] **Workshop agenda** — published six invited talks and four paper presentations,
+      with opening and closing remarks and a coffee break.
+- [ ] **Invited talk titles** — add the titles for Borivoje Nikolic and Jian Huang.
+- [ ] **Paper presentations** — add titles and presenters for the four paper slots.
 - [ ] **TPC affiliations** — add affiliations to the confirmed members and
       extend the list as invitations are accepted.
 - [ ] **Proceedings & presentation policy** — the CFP currently states
