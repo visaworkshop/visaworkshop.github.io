@@ -236,6 +236,13 @@ table{width:100%;border-collapse:collapse}
 .schedule .what b{font-weight:600}
 .schedule .what small{display:block;color:var(--mist);font-size:.85rem}
 
+/* ---------- accepted papers ---------- */
+.paper-list{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.paper-card{border:1px solid var(--line);border-left:3px solid var(--aegean);background:var(--paper);border-radius:4px;padding:20px 24px;overflow-wrap:anywhere}
+.paper-card h3{font-family:var(--serif);font-weight:600;font-size:1.25rem;line-height:1.35;margin-bottom:8px}
+.paper-card .authors{font-size:.94rem;line-height:1.6}
+.paper-card .aff{font-size:.86rem;color:var(--mist);margin-top:6px}
+
 /* ---------- people ---------- */
 .people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .person{border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:20px}
@@ -287,6 +294,7 @@ table{width:100%;border-collapse:collapse}
       <a href="#dates">Dates</a>
       <a href="#keynotes">Invited talks</a>
       <a href="#program">Program</a>
+      <a href="#papers">Papers</a>
       <a href="#people">People</a>
       <a href="#venue">Venue</a>
       <a class="nav-cta" href="cfp.html">Call for papers</a>
@@ -439,6 +447,44 @@ table{width:100%;border-collapse:collapse}
   <p class="dates-note">// talk titles marked "to be announced" will be updated when available</p>
 </section>
 
+<!-- ================= ACCEPTED PAPERS ================= -->
+<section class="sec wrap" id="papers">
+  <div class="sec-label"><code>visa.papers</code><span class="rule"></span></div>
+  <h2>Accepted papers</h2>
+  <p style="margin-bottom:20px">Paper download links will be made available at a later date.</p>
+  <ul class="paper-list">
+    <li class="paper-card">
+      <h3>Enabling Device-Initiated RDMA Communications in PTO-ISA on Ascend NPUs</h3>
+      <p class="authors">Yuxin Yang, Zixiao Chen, Jieran Zhang, Chenyue Li, Tuo Dai, Guojie Luo, and Bizhao Shi</p>
+      <p class="aff">Peking University; Shanghai Jiao Tong University</p>
+    </li>
+    <li class="paper-card">
+      <h3>SEPIDE: Spatial Execution &amp; Partitioning ISA for Dynamics Evaluation</h3>
+      <p class="authors">Nima Sahraneshinsamani</p>
+    </li>
+    <li class="paper-card">
+      <h3>What Makes a Virtual ISA Agent-Programmable? A Controlled Study of Agent-Facing Documentation for StableHLO</h3>
+      <p class="authors">Luxin Zhang</p>
+      <p class="aff">Independent Researcher</p>
+    </li>
+    <li class="paper-card">
+      <h3>Dynamic Storage Allocation with Reuse Penalties</h3>
+      <p class="authors">Toni Böhnlein</p>
+      <p class="aff">Huawei Research Center Zurich, Computing Systems Lab</p>
+    </li>
+    <li class="paper-card">
+      <h3>From Specification to Critical Path: Actor Networks as a Cost-Aware Virtual ISA</h3>
+      <p class="authors">Endri Bezati</p>
+      <p class="aff">Computing Systems Lab, Huawei Technologies Switzerland AG</p>
+    </li>
+    <li class="paper-card">
+      <h3>TileMoE: Stage-Adaptive Load-Aware Scheduling for Communication-Computation Fused MoE</h3>
+      <p class="authors">Yuan Zhang, Wenquan Xu, Lei Liu, Tianran Leng, Chenyi Wen, Chunyi Zhou, Ruoyu Zhou, Wenbo Sun, and Xuan Zhong</p>
+      <p class="aff">Huawei Technologies Co., Ltd.</p>
+    </li>
+  </ul>
+</section>
+
 <!-- ================= PEOPLE ================= -->
 <section class="sec wrap" id="people">
   <div class="sec-label"><code>visa.people</code><span class="rule"></span></div>
@@ -517,6 +563,7 @@ table{width:100%;border-collapse:collapse}
         <li><a href="cfp.html">Call for papers</a></li>
         <li><a href="https://visa2026.hotcrp.com/" rel="external">HotCRP submission site</a></li>
         <li><a href="#program">Program</a></li>
+        <li><a href="#papers">Accepted papers</a></li>
         <li><a href="https://www.microarch.org/micro59/" rel="external">MICRO 2026</a></li>
       </ul>
     </div>

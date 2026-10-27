@@ -93,7 +93,11 @@ Search both files under `2026/` for `TODO`:
 - [x] **Workshop agenda** — published six invited talks and four paper presentations,
       with opening and closing remarks and a coffee break.
 - [ ] **Invited talk titles** — add the titles for Borivoje Nikolic and Jian Huang.
-- [ ] **Paper presentations** — add titles and presenters for the four paper slots.
+- [x] **Accepted papers** — list six accepted papers, authors, and supplied affiliations
+      in the homepage's `#papers` section.
+- [ ] **Paper presentations** — confirm the mapping of accepted papers to the four
+      scheduled paper slots before adding titles and presenters to the agenda.
+- [ ] **Paper affiliation** — add Nima Sahraneshinsamani's affiliation when provided.
 - [ ] **TPC affiliations** — add affiliations to the confirmed members and
       extend the list as invitations are accepted.
 - [ ] **Proceedings & presentation policy** — the CFP currently states
