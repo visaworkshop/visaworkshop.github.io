@@ -91,9 +91,11 @@ Search both files under `2026/` for `TODO`:
 - [x] **Room** — Ypsilon III-IV at InterContinental Athenaeum Athens, listed in
       the October 27 agenda and confirmed against the MICRO workshop page.
 - [x] **Workshop agenda** — published six invited talks and four paper presentations,
-      with opening and closing remarks and a coffee break.
+      with closing remarks and a coffee break.
 - [x] **October 27 agenda** — add Jian Huang's talk title and the venue; list
       opening remarks without a speaker, as in the updated agenda.
+- [x] **October 30 agenda** — remove opening remarks and start LIAO HENG's
+      invited talk at 13:00; retain its 13:40 end time and all later sessions.
 - [ ] **Invited talk titles** — add the title for Borivoje Nikolic.
 - [x] **Accepted papers** — list six accepted papers, authors, and supplied affiliations
       in the homepage's `#papers` section.
