@@ -14,7 +14,8 @@ Website of the **VISA Workshop — Virtual ISA for Rapidly Evolving Architecture
 ├── .nojekyll         # tells GitHub Pages to serve files as-is (no Jekyll build)
 └── 2026/
     ├── index.html    # workshop home: hero, dates, keynotes, program, people, venue
-    └── cfp.html      # call for papers: scope, topics, submission, review
+    ├── cfp.html      # call for papers: scope, topics, submission, review
+    └── papers/       # accepted paper PDFs for this edition
 ```
 
 Each year's directory is **fully self-contained** (styles are embedded in each
@@ -99,9 +100,9 @@ Search both files under `2026/` for `TODO`:
 - [ ] **Invited talk titles** — add the title for Borivoje Nikolic.
 - [x] **Accepted papers** — list six accepted papers, authors, and supplied affiliations
       in the homepage's `#papers` section.
-- [ ] **Paper presentations** — confirm the mapping of accepted papers to the four
-      scheduled paper slots before adding titles and presenters to the agenda.
-- [ ] **Paper affiliation** — add Nima Sahraneshinsamani's affiliation when provided.
+- [x] **Paper presentations** — list the four scheduled talks with their titles,
+      presenters, and links to the corresponding accepted papers.
+- [x] **Paper PDFs** — archive all six papers under `2026/papers/` and link them from the homepage.
 - [ ] **TPC affiliations** — add affiliations to the confirmed members and
       extend the list as invitations are accepted.
 - [ ] **Proceedings & presentation policy** — the CFP currently states
@@ -110,8 +111,12 @@ Search both files under `2026/` for `TODO`:
 
 ## Yearly rollover (e.g., 2027)
 
-1. `cp -r 2026 2027`
-2. Update the content of `2027/` (dates, program, people, edition number).
+1. Create `2027/` and copy the previous edition's HTML pages as templates.
+2. Update the new edition's dates, program, people, and paper list. Store its
+   PDFs in `2027/papers/`, using `VISA2027-<order>-P<submission-id>-<first-author-surname>.pdf`.
+   Use a two-digit list position, a three-digit (minimum) submission ID, and
+   ASCII filenames under 50 characters. Link papers using edition-relative
+   paths such as `papers/VISA2027-01-P055-Smith.pdf`.
 3. In the **root** `index.html`, change the three occurrences of `2026/`
    to `2027/` (meta refresh, canonical link, JS redirect).
 4. Add a small "Past editions" link in the new edition's footer if desired.
