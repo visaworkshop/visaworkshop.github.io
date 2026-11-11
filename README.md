@@ -14,7 +14,7 @@ Website of the **VISA Workshop — Virtual ISA for Rapidly Evolving Architecture
 ├── .nojekyll         # tells GitHub Pages to serve files as-is (no Jekyll build)
 └── 2026/
     ├── index.html    # workshop home: hero, dates, keynotes, program, people, venue
-    ├── cfp.html      # call for papers: scope, topics, submission, review
+    ├── cfp.html      # archived 2026 call for papers
     └── papers/       # accepted paper PDFs for this edition
 ```
 
@@ -79,16 +79,12 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-## Before the CFP goes wide — placeholder checklist
+## 2026 site checklist
 
 Search both files under `2026/` for `TODO`:
 
-- [x] **HotCRP link** — wired to `https://visa2026.hotcrp.com/` in the home page,
-      CFP submission controls, and both footers.
-- [x] **HotCRP activation** — the site is live; activation-pending highlights have
-      been removed from the home and CFP pages.
-- [x] **HotCRP submissions** — submission controls use "Submit a paper" and the
-      home and CFP status notes announce that submissions are open.
+- [x] **Post-workshop archive** — remove submission controls from the site,
+      mark the call as closed, and link to the accepted papers and program.
 - [x] **Room** — Ypsilon III-IV at InterContinental Athenaeum Athens, listed in
       the October 27 agenda and confirmed against the MICRO workshop page.
 - [x] **Workshop agenda** — published six invited talks and four paper presentations,
@@ -97,7 +93,7 @@ Search both files under `2026/` for `TODO`:
       opening remarks without a speaker, as in the updated agenda.
 - [x] **October 30 agenda** — remove opening remarks and start LIAO HENG's
       invited talk at 13:00; retain its 13:40 end time and all later sessions.
-- [ ] **Invited talk titles** — add the title for Borivoje Nikolic.
+- [x] **Invited talk titles** — include Borivoje Nikolic's title from the final agenda.
 - [x] **Accepted papers** — list six accepted papers, authors, and supplied affiliations
       in the homepage's `#papers` section.
 - [x] **Paper presentations** — list the four scheduled talks with their titles,
@@ -105,9 +101,6 @@ Search both files under `2026/` for `TODO`:
 - [x] **Paper PDFs** — archive all six papers under `2026/papers/` and link them from the homepage.
 - [ ] **TPC affiliations** — add affiliations to the confirmed members and
       extend the list as invitations are accepted.
-- [ ] **Proceedings & presentation policy** — the CFP currently states
-      non-archival + in-person presentation; confirm both with the committee
-      and with MICRO (hybrid policy) before announcing.
 
 ## Yearly rollover (e.g., 2027)
 
