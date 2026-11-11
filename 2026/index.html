@@ -346,6 +346,7 @@ table{width:100%;border-collapse:collapse}
 <div class="wrap">
   <aside class="news" aria-label="News">
     <ul>
+      <li><time datetime="2026-11-11">Nov 11, 2026</time><p><a href="#papers">Download the VISA 2026 accepted papers</a>.</p></li>
       <li><time datetime="2026-10-27">Oct 27, 2026</time><p><a href="#program">Workshop agenda published</a> — join us on <strong>Saturday, October 31, 13:00 – 18:00 EET</strong> for six invited talks and four paper presentations.</p></li>
       <li><time datetime="2026-09-28">Sep 28, 2026</time><p>Submission deadline extended — papers are now due <strong>Thursday, October 15, 2026 (23:59 AoE)</strong>. Author notification: October 20; camera-ready papers: October 25.</p></li>
       <li><time datetime="2026-08">Aug 2026</time><p>VISA has been accepted as a workshop at <a href="https://www.microarch.org/micro59/" rel="external">MICRO 2026</a> in Athens.</p></li>
@@ -432,13 +433,13 @@ table{width:100%;border-collapse:collapse}
       <tr class="row-key"><td class="t">13:00 – 13:40</td><td class="what"><b>Invited Talk — LIAO HENG</b><small>The Contract for Nested Parallel Computers - Taking Another Look at Instruction Set Architecture</small></td></tr>
       <tr class="row-key"><td class="t">13:40 – 14:10</td><td class="what"><b>Invited Talk — Luca Benini</b><small>Leveraging an open ISA from Handcrafted to agentic Design</small></td></tr>
       <tr class="row-key"><td class="t">14:10 – 14:40</td><td class="what"><b>Invited Talk — Borivoje Nikolic</b><small>Title to be announced</small></td></tr>
-      <tr><td class="t">14:40 – 15:00</td><td class="what"><b>Paper Presentation #1</b></td></tr>
-      <tr><td class="t">15:00 – 15:20</td><td class="what"><b>Paper Presentation #2</b></td></tr>
+      <tr><td class="t">14:40 – 15:00</td><td class="what"><b>Paper Presentation — Nima Sahraneshinsamani</b><small><a href="#paper-062">SEPIDE: Spatial Execution &amp; Partitioning ISA for Dynamics Evaluation</a></small></td></tr>
+      <tr><td class="t">15:00 – 15:20</td><td class="what"><b>Paper Presentation — Endri Bezati</b><small><a href="#paper-064">From Specification to Critical Path: Actor Networks as a Cost-Aware Virtual ISA</a></small></td></tr>
       <tr class="row-break"><td class="t">15:20 – 15:40</td><td>Coffee Break</td></tr>
       <tr class="row-key"><td class="t">15:40 – 16:10</td><td class="what"><b>Invited Talk — Jian Huang</b><small>Cross-layer Abstractions for Efficient AI Computing: From Chip Virtualization to Tile-Based Programming</small></td></tr>
       <tr class="row-key"><td class="t">16:10 – 16:40</td><td class="what"><b>Invited Talk — Mingzhe Zhang</b><small>Beyond Compute Offload: What Homomorphic Encryption Teaches Us About Virtual ISA for Heterogeneous Systems</small></td></tr>
-      <tr><td class="t">16:40 – 17:00</td><td class="what"><b>Paper Presentation #3</b></td></tr>
-      <tr><td class="t">17:00 – 17:20</td><td class="what"><b>Paper Presentation #4</b></td></tr>
+      <tr><td class="t">16:40 – 17:00</td><td class="what"><b>Paper Presentation — Toni Böhnlein</b><small><a href="#paper-018">Dynamic Storage Allocation with Reuse Penalties</a></small></td></tr>
+      <tr><td class="t">17:00 – 17:20</td><td class="what"><b>Paper Presentation — Wenquan Xu</b><small><a href="#paper-067">TileMoE: Stage-Adaptive Load-Aware Scheduling for Communication-Computation Fused MoE</a></small></td></tr>
       <tr class="row-key"><td class="t">17:20 – 17:50</td><td class="what"><b>Invited Talk — Onur Mutlu</b><small>Memory-Centric Computing: Solving Computing’s Memory Problem</small></td></tr>
       <tr><td class="t">17:50 – 18:00</td><td class="what"><b>Closing Remarks — Wei Shi</b></td></tr>
     </tbody>
@@ -450,37 +451,43 @@ table{width:100%;border-collapse:collapse}
 <section class="sec wrap" id="papers">
   <div class="sec-label"><code>visa.papers</code><span class="rule"></span></div>
   <h2>Accepted papers</h2>
-  <p style="margin-bottom:20px">Paper download links will be made available at a later date.</p>
+  <p style="margin-bottom:20px">Download the six accepted papers. The first four follow the order of the scheduled paper presentations.</p>
   <ul class="paper-list">
-    <!-- Keep Huawei-affiliated papers after the other accepted papers. -->
-    <li class="paper-card">
-      <h3>Enabling Device-Initiated RDMA Communications in PTO-ISA on Ascend NPUs</h3>
-      <p class="authors">Yuxin Yang, Zixiao Chen, Jieran Zhang, Chenyue Li, Tuo Dai, Guojie Luo, and Bizhao Shi</p>
-      <p class="aff">Peking University; Shanghai Jiao Tong University</p>
-    </li>
-    <li class="paper-card">
-      <h3>SEPIDE: Spatial Execution &amp; Partitioning ISA for Dynamics Evaluation</h3>
+    <li class="paper-card" id="paper-062">
+      <h3 id="title-062">SEPIDE: Spatial Execution &amp; Partitioning ISA for Dynamics Evaluation</h3>
       <p class="authors">Nima Sahraneshinsamani</p>
+      <p class="aff">Universitat Jaume I</p>
+      <p><a href="papers/VISA2026-01-P062-Sahraneshinsamani.pdf" download aria-describedby="title-062">Download PDF</a></p>
     </li>
-    <li class="paper-card">
-      <h3>What Makes a Virtual ISA Agent-Programmable? A Controlled Study of Agent-Facing Documentation for StableHLO</h3>
-      <p class="authors">Luxin Zhang</p>
-      <p class="aff">Independent Researcher</p>
-    </li>
-    <li class="paper-card">
-      <h3>Dynamic Storage Allocation with Reuse Penalties</h3>
-      <p class="authors">Toni Böhnlein</p>
-      <p class="aff">Huawei Research Center Zurich, Computing Systems Lab</p>
-    </li>
-    <li class="paper-card">
-      <h3>From Specification to Critical Path: Actor Networks as a Cost-Aware Virtual ISA</h3>
+    <li class="paper-card" id="paper-064">
+      <h3 id="title-064">From Specification to Critical Path: Actor Networks as a Cost-Aware Virtual ISA</h3>
       <p class="authors">Endri Bezati</p>
       <p class="aff">Computing Systems Lab, Huawei Technologies Switzerland AG</p>
+      <p><a href="papers/VISA2026-02-P064-Bezati.pdf" download aria-describedby="title-064">Download PDF</a></p>
     </li>
-    <li class="paper-card">
-      <h3>TileMoE: Stage-Adaptive Load-Aware Scheduling for Communication-Computation Fused MoE</h3>
+    <li class="paper-card" id="paper-018">
+      <h3 id="title-018">Dynamic Storage Allocation with Reuse Penalties</h3>
+      <p class="authors">Toni Böhnlein</p>
+      <p class="aff">Huawei Research Center Zurich, Computing Systems Lab</p>
+      <p><a href="papers/VISA2026-03-P018-Boehnlein.pdf" download aria-describedby="title-018">Download PDF</a></p>
+    </li>
+    <li class="paper-card" id="paper-067">
+      <h3 id="title-067">TileMoE: Stage-Adaptive Load-Aware Scheduling for Communication-Computation Fused MoE</h3>
       <p class="authors">Yuan Zhang, Wenquan Xu, Lei Liu, Tianran Leng, Chenyi Wen, Chunyi Zhou, Ruoyu Zhou, Wenbo Sun, and Xuan Zhong</p>
       <p class="aff">Huawei Technologies Co., Ltd.</p>
+      <p><a href="papers/VISA2026-04-P067-Zhang.pdf" download aria-describedby="title-067">Download PDF</a></p>
+    </li>
+    <li class="paper-card" id="paper-055">
+      <h3 id="title-055">Enabling Device-Initiated RDMA Communications in PTO-ISA on Ascend NPUs</h3>
+      <p class="authors">Yuxin Yang, Zixiao Chen, Jieran Zhang, Chenyue Li, Tuo Dai, Bizhao Shi, and Guojie Luo</p>
+      <p class="aff">Peking University; Shanghai Jiao Tong University; Independent Researcher</p>
+      <p><a href="papers/VISA2026-05-P055-Yang.pdf" download aria-describedby="title-055">Download PDF</a></p>
+    </li>
+    <li class="paper-card" id="paper-085">
+      <h3 id="title-085">What Makes a Virtual ISA Agent-Programmable? A Controlled Study of Agent-Facing Documentation for StableHLO</h3>
+      <p class="authors">Luxin Zhang</p>
+      <p class="aff">Independent Researcher</p>
+      <p><a href="papers/VISA2026-06-P085-Zhang.pdf" download aria-describedby="title-085">Download PDF</a></p>
     </li>
   </ul>
 </section>
