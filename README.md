@@ -15,11 +15,12 @@ Website of the **VISA Workshop — Virtual ISA for Rapidly Evolving Architecture
 └── 2026/
     ├── index.html    # workshop home: hero, dates, keynotes, program, people, venue
     ├── cfp.html      # archived 2026 call for papers
+    ├── visa-favicon.{svg,png} # browser tab icon
     └── papers/       # accepted paper PDFs for this edition
 ```
 
 Each year's directory is **fully self-contained** (styles are embedded in each
-page, no shared assets). That keeps old editions frozen and browsable forever,
+page and edition assets stay in that directory). That keeps old editions frozen and browsable forever,
 even as the design evolves. The cost: `2026/index.html` and `2026/cfp.html`
 duplicate one `<style>` block — if you change shared styles, change both files.
 
@@ -104,14 +105,14 @@ Search both files under `2026/` for `TODO`:
 
 ## Yearly rollover (e.g., 2027)
 
-1. Create `2027/` and copy the previous edition's HTML pages as templates.
+1. Create `2027/` and copy the previous edition's HTML pages and favicon files.
 2. Update the new edition's dates, program, people, and paper list. Store its
    PDFs in `2027/papers/`, using `VISA2027-<order>-P<submission-id>-<first-author-surname>.pdf`.
    Use a two-digit list position, a three-digit (minimum) submission ID, and
    ASCII filenames under 50 characters. Link papers using edition-relative
    paths such as `papers/VISA2027-01-P055-Smith.pdf`.
-3. In the **root** `index.html`, change the three occurrences of `2026/`
-   to `2027/` (meta refresh, canonical link, JS redirect).
+3. In the **root** `index.html`, update the favicon links, canonical URL,
+   redirects, and fallback link for the new edition.
 4. Add a small "Past editions" link in the new edition's footer if desired.
    Old years stay untouched at `/2026/`, `/2027/`, …
 
